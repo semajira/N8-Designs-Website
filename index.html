@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>N8 Designs — Custom Merch for Brands That Don't Belong in a Mall</title>
+  <meta name="description" content="N8 Designs is a Vancouver-based merchandise studio creating custom apparel and goods for hospitality venues, liquor brands, and culture-forward companies.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==============================
+       RESET & ROOT
+    ============================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pacific:  #004752;
+      --midnight: #011627;
+      --scarlet:  #FF0000;
+      --stone:    #C0B7B1;
+      --white:    #FFFFFF;
+      --near-white: #F4F1EE;
+      --black:    #000D18;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--stone);
+      color: var(--midnight);
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { text-decoration: none; }
+
+    /* ==============================
+       TYPOGRAPHY UTILITIES
+    ============================== */
+    .label {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--scarlet);
+      margin-bottom: 0.9rem;
+    }
+
+    .display {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .condensed {
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    /* ==============================
+       LAYOUT UTILITIES
+    ============================== */
+    .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section { padding: 7rem 3rem; }
+
+    /* ==============================
+       NAV
+    ============================== */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      padding: 1.2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(192, 183, 177, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(1,22,39,0.1);
+      transition: background 0.3s;
+    }
+
+    .nav-logo img { height: 34px; width: auto; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(1,22,39,0.55);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--midnight); }
+
+    .nav-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--scarlet);
+      padding: 0.6rem 1.5rem;
+      border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: #d40000; transform: translateY(-1px); }
+
+    /* ==============================
+       HERO
+    ============================== */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      padding: 6rem 3rem 4rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('website%20assets/photos/silk-screen-printing-serigraphy-color-paints-and-2026-01-06-09-03-29-utc.jpg');
+      background-size: cover;
+      background-position: center 40%;
+      transform: scale(1.04);
+      transition: transform 8s ease;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(1,22,39,0.75) 0%,
+        rgba(1,22,39,0.4) 50%,
+        rgba(1,22,39,0.8) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.4rem, 4.2vw, 4.8rem);
+      line-height: 1.08;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-shadow: 0 2px 24px rgba(0,0,0,0.45);
+      margin-bottom: 1.6rem;
+    }
+    .hero-headline em {
+      color: var(--scarlet);
+      font-style: normal;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--white);
+      max-width: 680px;
+      margin-bottom: 2.8rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--scarlet);
+      padding: 0.9rem 2.2rem;
+      border-radius: 6px;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #d40000; transform: translateY(-2px); }
+
+    .btn-outline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 0.9rem 2.2rem;
+      border-radius: 6px;
+      display: inline-block;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover { border-color: var(--white); transform: translateY(-2px); }
+
+    /* ==============================
+       MARQUEE
+    ============================== */
+    .marquee-wrap {
+      background: #011627;
+      overflow: hidden;
+      padding: 0.75rem 0;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: scroll-left 22s linear infinite;
+    }
+
+    .marquee-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      padding: 0 2.5rem;
+    }
+
+    .marquee-dot {
+      color: rgba(255,255,255,0.45);
+      padding: 0;
+      font-size: 0.5rem;
+      align-self: center;
+    }
+
+    @keyframes scroll-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ==============================
+       WHO WE SERVE
+    ============================== */
+    #serve { background: var(--pacific); }
+
+    .serve-intro {
+      margin-bottom: 3rem;
+    }
+
+    .serve-headline {
+      font-size: clamp(2.8rem, 5vw, 5.5rem);
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .serve-desc {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.68);
+      max-width: 680px;
+      margin-bottom: 0;
+    }
+
+    .serve-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5rem;
+    }
+
+    .serve-card {
+      background: var(--pacific);
+      padding: 2rem 0 0 0;
+      border-top: 2px solid rgba(255,255,255,0.25);
+    }
+
+    .serve-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      color: rgba(255,255,255,0.1);
+      line-height: 1;
+      margin-bottom: 1.2rem;
+    }
+
+    .serve-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .serve-body {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* ==============================
+       FEATURED WORK
+    ============================== */
+    #work { background: var(--stone); }
+
+    .work-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+    }
+
+    .work-headline {
+      font-size: clamp(2.8rem, 5vw, 5.5rem);
+      color: var(--midnight);
+    }
+
+    /* Dark outline variant for use on light (stone) backgrounds */
+    #work .btn-outline {
+      color: var(--midnight);
+      border-color: rgba(1,22,39,0.35);
+    }
+    #work .btn-outline:hover {
+      border-color: var(--midnight);
+    }
+
+    /* Primary grid: 1 large left + 2 stacked right */
+    .work-grid {
+      display: grid;
+      grid-template-columns: 58% 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 6px;
+      height: 680px;
+    }
+
+    .work-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .work-item--tall {
+      grid-row: span 2;
+    }
+
+    .work-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .work-item:hover img { transform: scale(1.05); }
+
+    .work-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(1,22,39,0.92) 0%, rgba(1,22,39,0.1) 55%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.75rem;
+      transform: translateY(55%);
+      transition: transform 0.4s ease;
+    }
+    .work-item:hover .work-overlay { transform: translateY(0); }
+
+    .work-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 0.3rem;
+    }
+
+    .work-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      letter-spacing: 0.04em;
+      color: var(--white);
+      line-height: 1.05;
+    }
+
+    .work-detail {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--stone);
+      margin-top: 0.3rem;
+    }
+
+    /* Placeholder for future client work */
+    .work-placeholder {
+      margin-top: 0.4rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .work-ph-card {
+      background: rgba(1,22,39,0.04);
+      border: 1px dashed rgba(1,22,39,0.18);
+      border-radius: 8px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .work-ph-card p {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.78rem;
+      color: rgba(1,22,39,0.28);
+      font-style: italic;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* ==============================
+       PROCESS
+    ============================== */
+    #process {
+      background: var(--stone);
+    }
+
+    #process .label { color: var(--pacific); }
+    #work .label { color: var(--pacific); }
+    #about .label { color: var(--pacific); }
+    #contact .label { color: var(--white); }
+    #serve .label { color: var(--white); }
+
+    .process-headline {
+      font-size: clamp(2.8rem, 5vw, 5.5rem);
+      color: var(--midnight);
+      margin-bottom: 1rem;
+    }
+
+    .process-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(1,22,39,0.55);
+      max-width: 520px;
+      margin-bottom: 4rem;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5rem;
+    }
+
+    .p-step { border-top: 2px solid var(--pacific); padding-top: 1.75rem; }
+
+    .p-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4.5rem;
+      color: var(--pacific);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .p-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--midnight);
+      margin-bottom: 0.75rem;
+    }
+
+    .p-body {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(1,22,39,0.6);
+    }
+
+    /* ==============================
+       CRAFT STRIP (photo break)
+    ============================== */
+    .craft-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .craft-strip div {
+      overflow: hidden;
+    }
+
+    .craft-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.7);
+      transition: transform 0.5s ease, filter 0.4s;
+    }
+
+    .craft-strip div:hover img {
+      transform: scale(1.06);
+      filter: saturate(1);
+    }
+
+    /* ==============================
+       ABOUT
+    ============================== */
+    #about { background: var(--stone); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .about-headline {
+      font-size: clamp(2.8rem, 4.5vw, 5rem);
+      color: var(--midnight);
+      margin-bottom: 1.75rem;
+    }
+
+    .about-body {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(1,22,39,0.65);
+      margin-bottom: 1.25rem;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img-wrap img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 8px;
+    }
+
+    .about-img-border {
+      display: none;
+    }
+
+    /* ==============================
+       CONTACT / CTA
+    ============================== */
+    #contact { background: var(--pacific); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .contact-headline {
+      font-size: clamp(2.8rem, 5vw, 5.5rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .contact-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.62);
+      max-width: 400px;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-meta p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
+    }
+
+    .contact-meta a {
+      color: var(--white);
+      font-weight: 400;
+      transition: opacity 0.2s;
+    }
+    .contact-meta a:hover { opacity: 0.7; }
+
+    /* Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .field label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      padding: 0.8rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+      border-radius: 6px;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: rgba(255,255,255,0.22);
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .field select option {
+      background: var(--pacific);
+      color: var(--white);
+    }
+
+    .btn-submit {
+      align-self: flex-start;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--midnight);
+      border: none;
+      border-radius: 6px;
+      padding: 1rem 2.5rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-submit:hover { background: #000; transform: translateY(-2px); }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    footer {
+      background: #a9a09a;
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      border-top: 1px solid rgba(1,22,39,0.12);
+    }
+
+    .footer-logo img { height: 26px; }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(1,22,39,0.45);
+      letter-spacing: 0.04em;
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-right a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(1,22,39,0.4);
+      transition: color 0.2s;
+    }
+    .footer-right a:hover { color: var(--midnight); }
+
+    /* ==============================
+       RESPONSIVE
+    ============================== */
+    @media (max-width: 1024px) {
+      .about-grid { gap: 3.5rem; }
+      .contact-grid { gap: 3.5rem; }
+    }
+
+    @media (max-width: 860px) {
+      section { padding: 5rem 1.5rem; }
+      #nav    { padding: 1rem 1.5rem; }
+      #hero   { padding: 7rem 1.5rem 4rem; align-items: flex-start; }
+
+      /* Hide nav links and CTA — hero has the same CTA */
+      .nav-links { display: none; }
+      .nav-cta   { display: none; }
+      .work-header .btn-outline { display: none; }
+
+      /* Reduce serve headline so it fits 2–3 lines */
+      .serve-headline { font-size: clamp(1.9rem, 7.5vw, 2.8rem); }
+      .serve-intro { margin-bottom: 2rem; }
+      .serve-grid  { grid-template-columns: 1fr; gap: 0; }
+      .serve-card  { border-top: 1px solid rgba(255,255,255,0.2); border-left: none; padding: 1.75rem 0; }
+
+      .work-grid { grid-template-columns: 1fr; height: auto; }
+      .work-item--tall { grid-row: auto; }
+      .work-item { height: 320px; }
+      .work-overlay { transform: translateY(0); }
+
+      .process-steps { grid-template-columns: 1fr; gap: 2.5rem; }
+      .craft-strip { grid-template-columns: repeat(2, 1fr); height: 280px; }
+
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img-wrap { display: none; }
+
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row-2 { grid-template-columns: 1fr; }
+
+      /* Footer: stack vertically, reset the absolute-centred copyright */
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+      .footer-copy { position: static; transform: none; }
+      .footer-right { justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==============================
+       NAVIGATION
+  ============================== -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">
+      <img src="website%20assets/logos/PNG/Horizontal.png" alt="N8 Designs">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Start a Project</a>
+  </nav>
+
+
+  <!-- ==============================
+       HERO
+  ============================== -->
+  <section id="hero">
+    <div class="hero-bg" id="hero-bg"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Vancouver, BC &nbsp;·&nbsp; Custom Merchandise Studio</p>
+
+      <h1 class="hero-headline">
+        Merch for the Brands<br>
+        People Actually <em>Wear.</em>
+      </h1>
+
+      <p class="hero-sub">
+        Custom design and production for hospitality venues, liquor brands, and culture-forward companies — built to last beyond a single season.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">See Our Work</a>
+        <a href="#contact" class="btn-outline">Start a Project</a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- ==============================
+       WHO WE SERVE
+  ============================== -->
+  <section id="serve">
+    <div class="inner">
+
+      <div class="serve-intro">
+        <p class="label">Who We Work With</p>
+        <h2 class="display serve-headline">
+          Built for Brands<br>That Live Off the Shelf
+        </h2>
+        <p class="serve-desc">
+          We work with the businesses that define their neighbourhoods — the spots people love, the labels people seek out, the brands worth repping. If your brand has a culture, we'll help you dress it.
+        </p>
+      </div>
+
+      <div class="serve-grid">
+
+        <div class="serve-card">
+          <div class="serve-num">01</div>
+          <h3 class="serve-title">Hospitality Brands</h3>
+          <p class="serve-body">Bars, restaurants, hotels, and venues. Your merch should be as memorable as the experience you serve. We design pieces that guests actually want to take home — not forget in a drawer.</p>
+        </div>
+
+        <div class="serve-card">
+          <div class="serve-num">02</div>
+          <h3 class="serve-title">Liquor & Beverage</h3>
+          <p class="serve-body">Craft breweries, distilleries, wineries, and everything in between. Merchandise that extends your brand beyond the bottle and builds loyalty with the people who already believe in what you make.</p>
+        </div>
+
+        <div class="serve-card">
+          <div class="serve-num">03</div>
+          <h3 class="serve-title">Culture Brands</h3>
+          <p class="serve-body">Local businesses and lifestyle brands that don't need a retail shelf to build a following. If you've earned your community's attention, we'll help you give them something to show for it.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       FEATURED WORK
+  ============================== -->
+  <section id="work">
+    <div class="inner">
+
+      <div class="work-header">
+        <div>
+          <p class="label">Featured Projects</p>
+          <h2 class="display work-headline">The Work</h2>
+        </div>
+        <a href="#contact" class="btn-outline">Start Your Project &rarr;</a>
+      </div>
+
+      <!-- MPV Primary Showcase -->
+      <div class="work-grid">
+
+        <div class="work-item work-item--tall">
+          <img src="website%20assets/photos/MPV%20Merch%20Photo%2001.jpg" alt="Mount Pleasant Vintage & Provisions">
+          <div class="work-overlay">
+            <div class="work-tag">Hospitality &nbsp;·&nbsp; Vancouver, BC</div>
+            <div class="work-name">Mount Pleasant Vintage & Provisions</div>
+            <div class="work-detail">Crewneck · T-Shirts · Caps · Tote Bags · Screen Print</div>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <img src="website%20assets/photos/Bar%20Bravo.png" alt="Bar Bravo — Custom Merch">
+          <div class="work-overlay">
+            <div class="work-tag">Hospitality &nbsp;·&nbsp; Vancouver, BC</div>
+            <div class="work-name">Bar Bravo</div>
+            <div class="work-detail">Custom merch · Branded apparel</div>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <img src="website%20assets/photos/Rum%20Club.jpg" alt="Rum Club — Custom Merch">
+          <div class="work-overlay">
+            <div class="work-tag">Liquor & Beverage &nbsp;·&nbsp; Vancouver, BC</div>
+            <div class="work-name">Rum Club</div>
+            <div class="work-detail">Custom merch · Branded apparel</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       CRAFT STRIP (photo interlude)
+  ============================== -->
+  <div class="craft-strip">
+    <div><img src="website%20assets/photos/serigraphy-silk-screen-print-process-at-clothes-fa-2026-01-06-09-27-50-utc.jpg" alt="Screen printing process"></div>
+    <div><img src="website%20assets/photos/professional-sewing-machine-embroidery-pattern-2026-01-06-09-08-25-utc.jpg" alt="Embroidery machine"></div>
+    <div><img src="website%20assets/photos/hand-holding-color-samples-palette-design-catalog-2026-01-09-00-30-27-utc.jpg" alt="Color palette selection"></div>
+    <div><img src="website%20assets/photos/clothes-rack-with-multicolored-men-s-polo-shirts-2026-01-08-06-53-25-utc.jpg" alt="Colourful polo shirts on rack"></div>
+  </div>
+
+
+  <!-- ==============================
+       PROCESS
+  ============================== -->
+  <section id="process">
+    <div class="inner">
+
+      <p class="label">How It Works</p>
+      <h2 class="display process-headline">From Brief to Brand</h2>
+      <p class="process-sub">
+        No bloated timelines, no confusing back-and-forth. Just a clear path from first conversation to finished product in your hands.
+      </p>
+
+      <div class="process-steps">
+
+        <div class="p-step">
+          <div class="p-num">01</div>
+          <h3 class="p-title">Tell Us About Your Brand</h3>
+          <p class="p-body">We start with a conversation. Share your brand, your vision, and what you want to create. We'll figure out the right products, quantities, and direction together — no pressure, no minimum-order pitch.</p>
+        </div>
+
+        <div class="p-step">
+          <div class="p-num">02</div>
+          <h3 class="p-title">We Design It</h3>
+          <p class="p-body">Our team develops concepts built around your brand identity — not generic templates. Expect bold ideas, honest feedback, and a collaborative process until the design is exactly right.</p>
+        </div>
+
+        <div class="p-step">
+          <div class="p-num">03</div>
+          <h3 class="p-title">We Make It Real</h3>
+          <p class="p-body">From production management and quality control to final delivery, we handle everything end-to-end. You focus on running your brand — we'll handle the rest.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       ABOUT
+  ============================== -->
+  <section id="about">
+    <div class="inner">
+      <div class="about-grid">
+
+        <div class="about-text">
+          <p class="label">About N8 Designs</p>
+          <h2 class="display about-headline">
+            Design-First.<br>Production-Ready.
+          </h2>
+          <p class="about-body">
+            N8 Designs is a Vancouver-based merchandise studio built for brands that don't fit the standard retail mold. We work closely with our clients — from initial concept through final delivery — to create merchandise that earns a place in people's wardrobes and on their shelves.
+          </p>
+          <p class="about-body">
+            Whether it's a cocktail bar launching its first merch run, a craft distillery building brand equity, or a neighbourhood business ready to turn regulars into ambassadors — we bring the same level of craft and intention to every project.
+          </p>
+        </div>
+
+        <div class="about-img-wrap">
+          <img src="website%20assets/photos/silk-screen-printing-serigraphy-color-paints-and-2026-01-06-09-15-50-utc.jpg" alt="Silk screen printing — ink and colour">
+          <div class="about-img-border"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       CONTACT / CTA
+  ============================== -->
+  <section id="contact">
+    <div class="inner">
+      <div class="contact-grid">
+
+        <div class="contact-left">
+          <p class="label">Get in Touch</p>
+          <h2 class="display contact-headline">
+            Ready to Build<br>Something?
+          </h2>
+          <p class="contact-sub">
+            Tell us about your brand and what you're looking to create. We'll get back to you within one business day.
+          </p>
+          <div class="contact-meta">
+            <p>Based in Vancouver, BC</p>
+          </div>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/xgonwjdj" method="POST">
+
+          <div class="form-row-2">
+            <div class="field">
+              <label for="f-name">Your Name</label>
+              <input type="text" id="f-name" name="name" placeholder="First Last" required>
+            </div>
+            <div class="field">
+              <label for="f-company">Company / Brand</label>
+              <input type="text" id="f-company" name="company" placeholder="Brand Name" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-email">Email Address</label>
+            <input type="email" id="f-email" name="email" placeholder="you@yourbrand.com" required>
+          </div>
+
+          <div class="field">
+            <label for="f-category">Brand Category</label>
+            <select id="f-category" name="category">
+              <option value="" disabled selected>Select a category</option>
+              <option value="hospitality">Hospitality — Bar / Restaurant / Venue</option>
+              <option value="liquor">Liquor / Beverage Brand</option>
+              <option value="culture">Culture / Lifestyle Brand</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-message">Tell Us About Your Project</label>
+            <textarea id="f-message" name="message" placeholder="What are you looking to create? Any details on quantity, timeline, or specific products are helpful — even rough ideas are a great start."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send It &rarr;</button>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+  <footer>
+    <div class="footer-logo">
+      <img src="website%20assets/logos/PNG/Horizontal.png" alt="N8 Designs">
+    </div>
+    <p class="footer-copy">&copy; 2026 N8 Designs &nbsp;·&nbsp; Vancouver, BC</p>
+    <div class="footer-right">
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <!-- TODO: Add Instagram / social link here -->
+    </div>
+  </footer>
+
+
+  <!-- ==============================
+       SCRIPTS
+  ============================== -->
+  <script>
+    // Smooth scroll (polyfill for Safari)
+    document.querySelectorAll('a[href^="#"]').forEach(el => {
+      el.addEventListener('click', e => {
+        const target = document.querySelector(el.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Subtle hero parallax on scroll
+    const heroBg = document.getElementById('hero-bg');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (heroBg && y < window.innerHeight) {
+        heroBg.style.transform = `scale(1.04) translateY(${y * 0.3}px)`;
+      }
+    });
+  </script>
+
+</body>
+</html>
